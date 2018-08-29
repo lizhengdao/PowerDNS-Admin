@@ -8,7 +8,8 @@ A PowerDNS web interface with advanced features.
 - User management
 - User access management based on domain
 - User activity logging
-- Local DB / SAML / LDAP / Active Directory user authentication
+- Local DB / LDAP / Active Directory user authentication
+- Support SAML authentication
 - Google oauth authentication
 - Github oauth authentication
 - Support Two-factor authentication (TOTP)
@@ -20,7 +21,6 @@ A PowerDNS web interface with advanced features.
 There are several ways to run PowerDNS-Admin. Following is a simple way to start PowerDNS-Admin with docker in development environment which has PowerDNS-Admin, PowerDNS server and MySQL Back-End Database.
 
 Step 1: Changing configuration
-
 The configuration file for developement environment is located at `configs/development.py`, you can override some configs by editing `.env` file.
 
 Step 2: Build docker images
@@ -36,5 +36,9 @@ You can now access PowerDNS-Admin at url http://localhost:9191
 **NOTE:** For other methods to run PowerDNS-Admin, please take look at WIKI pages.
 
 ### Screenshots
-![dashboard](https://user-images.githubusercontent.com/6447444/44068603-0d2d81f6-9fa5-11e8-83af-14e2ad79e370.png)
+![login page](https://github.com/ngoduykhanh/PowerDNS-Admin/wiki/images/readme_screenshots/fullscreen-login.png?raw=true)
+![dashboard](https://github.com/ngoduykhanh/PowerDNS-Admin/wiki/images/readme_screenshots/fullscreen-dashboard.png?raw=true)
+![create domain page](https://github.com/ngoduykhanh/PowerDNS-Admin/wiki/images/readme_screenshots/fullscreen-domaincreate.png?raw=true)
+![manage domain page](https://github.com/ngoduykhanh/PowerDNS-Admin/wiki/images/readme_screenshots/fullscreen-domainmanage.png?raw=true)
+![two-factor authentication config](https://cloud.githubusercontent.com/assets/6447444/16111111/467f2226-33db-11e6-926a-01b4d15035d2.png)
 

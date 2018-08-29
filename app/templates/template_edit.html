@@ -1,6 +1,5 @@
 {% extends "base.html" %}
-{% set active_page = "admin_domain_template" %}
-{% block title %}<title>Edit Template - {{ SITE_NAME }}</title>{% endblock %}
+{% block title %}<title>DNS Control Panel - Edit Template</title>{% endblock %}
 
 {% block dashboard_stat %}
 <section class="content-header">
@@ -103,14 +102,14 @@
         "ordering" : true,
         "info" : true,
         "autoWidth" : false,
-        {% if SETTING.get('default_record_table_size') in ['5','15','20'] %}
+        {% if default_record_table_size_setting in ['5','15','20'] %}
         "lengthMenu": [ [5, 15, 20, -1],
                         [5, 15, 20, "All"]],
         {% else %}
-        "lengthMenu": [ [5, 15, 20, {{ SETTING.get('default_record_table_size') }}, -1],
-                        [5, 15, 20, {{ SETTING.get('default_record_table_size') }}, "All"]],
+        "lengthMenu": [ [5, 15, 20, {{ default_record_table_size_setting }}, -1],
+                        [5, 15, 20, {{ default_record_table_size_setting }}, "All"]],
         {% endif %}
-        "pageLength": {{ SETTING.get('default_record_table_size') }},
+        "pageLength": {{ default_record_table_size_setting }},
         "language": {
             "lengthMenu": " _MENU_ records"
         },
@@ -224,7 +223,7 @@
             nNew = false;
         });
 
-    {% if SETTING.get('record_helper') %}
+    {% if record_helper_setting %}
     //handle wacky record types
     $(document.body).on("focus", "#current_edit_record_data", function (e) {
         var record_type = $(this).parents("tr").find('#record_type').val();

@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:latest
 MAINTAINER Khanh Ngo "k@ndk.name"
 ARG ENVIRONMENT=development
 ENV ENVIRONMENT=${ENVIRONMENT}
@@ -13,7 +13,7 @@ ENV LC_ALL en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US.UTF-8
 
-RUN apt-get install -y python3-pip python3-dev supervisor curl mysql-client
+RUN apt-get install -y python3-pip python3-dev supervisor curl
 
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" > /etc/apt/sources.list.d/yarn.list

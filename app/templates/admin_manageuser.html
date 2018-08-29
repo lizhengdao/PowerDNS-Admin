@@ -1,7 +1,5 @@
-{% extends "base.html" %}
-{% set active_page = "admin_users" %}
-{% block title %}
-<title>User Management - {{ SITE_NAME }}</title>
+{% extends "base.html" %} {% block title %}
+<title>DNS Control Panel - User Management</title>
 {% endblock %} {% block dashboard_stat %}
 <section class="content-header">
     <h1>
@@ -22,7 +20,7 @@
                     <h3 class="box-title">User Management</h3>
                 </div>
                 <div class="box-body">
-                    <a href="{{ url_for('admin_edituser') }}">
+                    <a href="{{ url_for('admin_createuser') }}">
                         <button type="button" class="btn btn-flat btn-primary pull-left button_add_user">
                             Add User&nbsp;<i class="fa fa-plus"></i>
                         </button>
@@ -38,7 +36,7 @@
                                 <th>Email</th>
                                 <th>Admin</th>
                                 <th>Privileges</th>
-                                <th>Action</th>
+                                <th>Deletion</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -56,10 +54,7 @@
                                         Revoke&nbsp;<i class="fa fa-lock"></i>
                                     </button>
                                 </td>
-                                <td width="15%">
-                                    <button type="button" class="btn btn-flat btn-success button_edit" onclick="window.location.href='{{ url_for('admin_edituser', user_username=user.username) }}'">
-                                        Edit&nbsp;<i class="fa fa-lock"></i>
-                                    </button>
+                                <td width="6%">
                                     <button type="button" class="btn btn-flat btn-danger button_delete" id="{{ user.username }}" {% if user.username==current_user.username %}disabled{% endif %}>
                                         Delete&nbsp;<i class="fa fa-trash"></i>
                                     </button>
